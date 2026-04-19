@@ -136,7 +136,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
                 </div>
                 <h4 className="font-bold text-gray-900 mb-2">{review.title}</h4>
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed flex-1">
-                  "{review.body}"
+                  &quot;{review.body}&quot;
                 </p>
                 <span className="text-sm font-bold text-gray-400">— {review.name}</span>
               </div>
