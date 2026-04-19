@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { products } from "@/data/products";
+import { Product } from "@/types";
 import FiltersSidebar from "@/components/FiltersSidebar";
 import BrandFilterCard from "@/components/BrandFilterCard";
 import ProductCard from "@/components/ProductCard";
@@ -54,7 +54,7 @@ function StoreContent() {
   }, [updateParams]);
 
   const filteredProducts = useMemo(() => {
-    return products.filter((product: any) => {
+    return products.filter((product: Product) => {
       const matchesCategory = selectedCategory === "All" || product.category === selectedCategory;
       const matchesPrice = product.price <= maxPrice;
       const matchesSearch = product.title.toLowerCase().includes(searchQuery);
@@ -140,7 +140,7 @@ function StoreContent() {
               <span className="text-gray-400 text-3xl">🔍</span>
             </div>
             <h3 className="text-2xl font-extrabold text-gray-800 mb-2">No products found</h3>
-            <p className="text-gray-500 max-w-md mb-8">We couldn't find any items matching your current filters and search query.</p>
+            <p className="text-gray-500 max-w-md mb-8">We couldn&apos;t find any items matching your current filters and search query.</p>
             <button 
               onClick={() => router.replace(pathname, { scroll: false })}
               className="px-8 py-3 bg-[#e8f1fc] text-[#1462b4] font-bold rounded-lg hover:bg-[#d8e6fa] transition-colors"
@@ -150,7 +150,7 @@ function StoreContent() {
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredProducts.map((product, index) => (
+            {filteredProducts.map((product) => (
               product.id === 1
                 ? <FeaturedProductCard key={product.id} product={product} />
                 : <ProductCard key={product.id} product={product} />

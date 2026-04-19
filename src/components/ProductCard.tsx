@@ -2,16 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
 
+import { Product } from "@/types";
+
 type ProductProps = {
-  product: {
-    id: number | string;
-    title: string;
-    price: number | string;
-    image: string;
-    category?: string;
-    rating?: number;
-    description?: string;
-  }
+  product: Product;
 };
 
 export default function ProductCard({ product }: ProductProps) {

@@ -7,6 +7,7 @@ import { ArrowLeft, Star, Minus, Plus, ShoppingCart } from "lucide-react";
 import { useState } from "react";
 import { products } from "@/data/products";
 import { useCart } from "@/context/CartContext";
+import { Review } from "@/types";
 
 export default function ProductDetail({ params }: { params: { id: string } }) {
   const { addToCart } = useCart();
@@ -122,7 +123,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
           {product.reviews && product.reviews.length > 0 ? (
-            product.reviews.map((review: any) => (
+            product.reviews.map((review: Review) => (
               <div key={review.id} className="bg-gray-50/50 p-6 rounded-xl border border-gray-100 flex flex-col hover:border-gray-200 transition-colors">
                 <div className="flex items-center gap-1 mb-3">
                   {[...Array(5)].map((_, i) => (

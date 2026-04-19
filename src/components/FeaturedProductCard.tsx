@@ -5,17 +5,10 @@ import Link from "next/link";
 import { useCart } from "@/context/CartContext";
 import { ShoppingCart } from "lucide-react";
 
+import { Product } from "@/types";
+
 type FeaturedProductProps = {
-  product: {
-    id: number | string;
-    title: string;
-    price: number | string;
-    image: string;
-    category?: string;
-    brand?: string;
-    rating?: number;
-    description?: string;
-  };
+  product: Product;
 };
 
 export default function FeaturedProductCard({ product }: FeaturedProductProps) {

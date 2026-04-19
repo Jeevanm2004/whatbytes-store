@@ -36,7 +36,7 @@ export default function CartPage() {
             </div>
             <h2 className="text-3xl font-extrabold text-[#1a2f4c] mb-4">Your cart is empty</h2>
             <p className="text-gray-500 mb-10 max-w-md text-lg leading-relaxed">
-              Looks like you haven't added anything to your cart yet. Discover some of our premium top-rated items!
+              Looks like you haven&apos;t added anything to your cart yet. Discover some of our premium top-rated items!
             </p>
             <Link 
               href="/"

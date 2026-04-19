@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Search, ShoppingCart, User } from "lucide-react";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense } from "react";
 import { useCart } from "@/context/CartContext";
 
 function HeaderContent() {
